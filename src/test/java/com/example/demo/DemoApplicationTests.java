@@ -36,6 +36,16 @@ public class DemoApplicationTests {
 		assertEquals(user.getPassword(), "123");
 		assertEquals(user.getEmail(), "test@gmail.com");
 	}
+	//test for User list add/ipdate/delete functions
+	@Test
+	public void needtoSaveUser() {
+		User user = new User("testUser", "123", "test@gmail.com");
+		usersDao.save(user);
+		assertNotNull(user);
+		assertEquals(user.getUsername(), "testUser");
+		assertEquals(user.getPassword(), "123");
+		assertEquals(user.getEmail(), "test@gmail.com");
+	}
 
 	@Test
 	public void testUserUpdate() {
